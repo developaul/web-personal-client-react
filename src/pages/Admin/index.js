@@ -1,5 +1,5 @@
 import { AdminHome } from './AdminHome';
-import { AdminSignIn } from './AdminSignIn';
+import { AdminSignIn } from './SignIn';
 
 export {
   AdminHome,

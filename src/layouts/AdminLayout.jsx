@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Redirect, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 
 import { LoadRoutes } from '../routers/LoadRoutes';
 import { MenuTop } from '../components/Admin/MenuTop'
 import { MenuSider } from '../components/Admin/MenuSider'
+import { AdminSignIn } from '../pages/Admin';
 
 import './AdminLayout.scss';
 
@@ -11,6 +13,15 @@ const { Header, Content, Footer } = Layout;
 
 export const AdminLayout = ({ routes }) => {
   const [menuCollapsed, setMenuCollapsed] = useState(false);
+
+  const user = null;
+
+  if (!user) return (
+    <>
+      <Route path="/admin/login" component={AdminSignIn} />
+      <Redirect to="/admin/login" />
+    </>
+  );
 
   return (
     <>
